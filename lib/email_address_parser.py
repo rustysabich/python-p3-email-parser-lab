@@ -13,5 +13,5 @@ class EmailAddressParser:
         emails = re.split(r"[\s,]+", self.email_string)
         # sort the emails
         emails.sort()
-        return emails
+        return [email for email in emails if re.match(r"^[A-z][\w\.]+@[\w]+\.[\w]+$", email)]
         
